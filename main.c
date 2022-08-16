@@ -4,6 +4,7 @@
 int
 main()
 {
+  //fix
   int q, w, e, r, t, y;
   q=q+w+e+r+t+y;
 }
