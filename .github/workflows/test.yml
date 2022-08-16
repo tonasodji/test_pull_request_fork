@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Analyze:
     runs-on: self-hosted
     steps:
     # This step checks out a copy of your repository.
