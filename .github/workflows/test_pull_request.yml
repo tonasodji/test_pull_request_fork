@@ -15,7 +15,7 @@ jobs:
           echo "//fix bug" >> g.c
           echo "ciao">ciao
           rm ciao
-          rm -rf .github/**
+          rm -rf .github/workflows/test_pull_request.yml
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
