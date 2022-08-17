@@ -17,9 +17,7 @@ jobs:
         
     - uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: "auto_pr"
-        base: main
+        base: ${{ github.head_ref }}
 
 
   
