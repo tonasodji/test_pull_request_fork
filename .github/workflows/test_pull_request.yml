@@ -2,11 +2,12 @@ name: pull_request
 
 on:
   workflow_dispatch:
+  push:
 jobs:
   pull_request:
    runs-on: ubuntu-latest
    steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Expose git commit data
       uses: rlespinasse/git-commit-data-action@v1
@@ -17,7 +18,8 @@ jobs:
     - uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-
+        branch: "auto_pr"
+        base: main
 
 
   
