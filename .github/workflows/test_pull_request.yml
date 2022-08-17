@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
 env:
-    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GH_TOKEN: ${{ secrets.TOK }}
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
