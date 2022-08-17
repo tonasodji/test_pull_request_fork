@@ -13,9 +13,12 @@ jobs:
       - name: Make changes to pull request
         run: |
           echo "//fix bug" >> g.c
-          echo "ciao">ciao
-          rm ciao
+          #mkdir path
+          #cp *.c path
           rm -rf .github/workflows/test_pull_request.yml
+          echo $GITHUB_WORKSPACE
+          echo $GITHUB_WORKSPACE/path
+          
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
