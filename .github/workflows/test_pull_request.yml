@@ -13,11 +13,11 @@ jobs:
       - name: Make changes to pull request
         run: |
           echo "//fix bug" >> g.c
-          #mkdir path
-          #cp *.c path
-          rm -rf .github/workflows/test_pull_request.yml
+          mkdir path
+          cp *.c path
           echo $GITHUB_WORKSPACE
           echo $GITHUB_WORKSPACE/path
+          ls -R
           
 
       - name: Create Pull Request
@@ -26,4 +26,5 @@ jobs:
           token: ${{ secrets.TOK }}
           branch: test
           delete-branch: true
+          path: $GITHUB_WORKSPACE/path
           
