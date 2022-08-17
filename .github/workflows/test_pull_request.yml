@@ -26,5 +26,5 @@ jobs:
           token: ${{ secrets.TOK }}
           branch: test
           delete-branch: true
-          path: $GITHUB_WORKSPACE/path
+          path: "/home/runner/work/test_pull_request_fork/test_pull_request_fork/path"
           
