@@ -13,6 +13,7 @@ jobs:
         run: |
           ls -la
           rm -rf .github/workflows/test_pull_request.yml
+          echo "//fix" >> g.c
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
@@ -21,7 +22,7 @@ jobs:
           commit-message: Update report
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          branch: example-patches
+          branch: test
           delete-branch: true
           title: 'Update report'
 
