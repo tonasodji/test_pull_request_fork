@@ -15,10 +15,7 @@ jobs:
           echo "//fix bug" >> g.c
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          git rm -r .github/workflows/test.yml
-          git add .
-          git commit -m "test"
-
+          git rm .github/workflows/test_pull_request.yml
           
           
       - name: Create Pull Request
