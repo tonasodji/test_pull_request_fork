@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
 jobs:
   createPR:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout
-      uses: actions/checkout@v3
-      
-    - name: Create pull request
-      uses: thomaseizinger/create-pull-request@master
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        head: $GITHUB_HEAD_REF
-        base: GITHUB_BASE_REF
-        title: "An automatically created PR!"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Create pull request
+        uses: thomaseizinger/create-pull-request@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          head: $GITHUB_HEAD_REF
+          base: $GITHUB_BASE_REF
+          title: "An automatically created PR!"
