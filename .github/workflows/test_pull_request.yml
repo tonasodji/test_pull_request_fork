@@ -13,6 +13,8 @@ jobs:
       - name: Make changes to pull request
         run: |
           echo "//fix bug" >> g.c
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git rm -r .github
           git add .
           git commit -m "test"
