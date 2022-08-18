@@ -14,12 +14,12 @@ jobs:
         run: |
           echo "//fix bug" >> g.c
           mkdir path
+          cp .git path
           cp *.c path
           echo $GITHUB_WORKSPACE
           echo $GITHUB_WORKSPACE/path
-          ls -R
+          ls -la
           
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
