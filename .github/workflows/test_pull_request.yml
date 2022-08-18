@@ -18,7 +18,7 @@ jobs:
           cp *.c path
           echo $GITHUB_WORKSPACE
           echo $GITHUB_WORKSPACE/path
-          ls -la
+          ls -laR
           
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
