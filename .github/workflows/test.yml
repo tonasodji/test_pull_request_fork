@@ -4,10 +4,7 @@ name: "Analyze"
 on:
   workflow_dispatch:
   pull_request:
-  workflow_run:
-    workflows: [Analyze]
-    types:
-      - completed
+
 jobs:
   Analyze:
     runs-on: self-hosted
