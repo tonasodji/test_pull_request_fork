@@ -13,14 +13,10 @@ jobs:
       - name: Make changes to pull request
         run: |
           echo "//fix bug" >> g.c
-          mkdir path
-          git rm .github
+          git rm -r .github
           git add .
           git commit -m "test"
-          cp -r .git path
-          cp *.c path
-          echo $GITHUB_WORKSPACE
-          echo $GITHUB_WORKSPACE/path
+
           
           
       - name: Create Pull Request
@@ -29,5 +25,5 @@ jobs:
           token: ${{ secrets.TOK }}
           branch: test
           delete-branch: true
-          path: "/home/runner/work/test_pull_request_fork/test_pull_request_fork/path"
+
           
