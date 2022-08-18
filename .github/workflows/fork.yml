@@ -2,17 +2,23 @@ name: PR
 
 on:
   workflow_dispatch:
+  push:
 jobs:
   createPR:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: Run
+        run: |
+          echo ${{ secrets.GITHUB_HEAD_REF}}
+          echo ${{ secrets.GITHUB_BASE_REF}}
+          echo "ciao">ciao
 
       - name: Create pull request
         uses: thomaseizinger/create-pull-request@master
         with:
           GITHUB_TOKEN: ${{ secrets.TOK }}
-          head: $GITHUB_HEAD_REF
-          base: $GITHUB_BASE_REF
+          head: ${{ secrets.GITHUB_HEAD_REF}}
+          base: ${{ secrets.GITHUB_BASE_REF}}
           title: "An automatically created PR!"
