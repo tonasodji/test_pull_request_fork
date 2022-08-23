@@ -1,6 +1,6 @@
-name: "analyze
+name: analyze
 on:
   pull_request:
 jobs:
-  test_1:
+  call:
     uses: tonasodji/pvs/.github/workflows/test.yml@main
