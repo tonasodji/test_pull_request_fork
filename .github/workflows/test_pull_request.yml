@@ -12,6 +12,11 @@ jobs:
           repository: tonasodji/test_pull_request
           ref: main
           
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.TOK }}
+          
       - name: Analyze
         run: |
           echo "//fix bug" >> g.c
@@ -25,15 +30,11 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: pvs/results.sarif
-      
+          
       - name: clean
         run: |
           rm -rf pvs
-          
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.TOK }}
+      
 
 
           
