@@ -9,7 +9,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         with:
-          repository: test_pull_request
+          repository: tonasodji/test_pull_request
           ref: main
           
       - name: Analyze
